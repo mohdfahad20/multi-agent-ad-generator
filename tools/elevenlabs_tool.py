@@ -44,7 +44,6 @@ class ElevenLabsTool(BaseTool):
     args_schema: Type[BaseModel] = ElevenLabsToolInput
 
     def _run(self, script: str, voice_id: str = "") -> str:
-        print("ELEVEN KEY:", repr(settings.ELEVENLABS_API_KEY))
         vid = voice_id or settings.ELEVENLABS_VOICE_ID
         logger.info(f"Generating voiceover | chars={len(script)} | voice={vid}")
 

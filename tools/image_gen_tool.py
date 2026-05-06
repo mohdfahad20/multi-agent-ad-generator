@@ -7,6 +7,10 @@ This explicitly routes to HF's own free serverless GPUs instead of fal-ai/replic
 The 402 errors were caused by InferenceClient auto-selecting fal-ai (paid).
 Setting provider="hf-inference" locks it to HF's own backend — free with your token.
 
+FIX 2: field_validator on ImageGenToolInput.prompts coerces list → JSON string
+before Pydantic type-checks it. This eliminates the attempt #1 validation error
+where CrewAI's agent passes a Python list instead of a JSON string.
+
 MODEL: black-forest-labs/FLUX.1-schnell
 - Supported by hf-inference provider
 - Fast (4 steps), high quality
@@ -15,12 +19,12 @@ MODEL: black-forest-labs/FLUX.1-schnell
 import io
 import json
 from pathlib import Path
-from typing import Type
+from typing import Any, Type
 
 from huggingface_hub import InferenceClient
 from PIL import Image
 from crewai.tools import BaseTool
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from tenacity import retry, stop_after_attempt, wait_exponential
 
 from config import settings
@@ -41,6 +45,23 @@ class ImageGenToolInput(BaseModel):
             '"phone showing trading app with green profits"]'
         )
     )
+
+    @field_validator("prompts", mode="before")
+    @classmethod
+    def coerce_to_string(cls, v: Any) -> str:
+        """
+        Accept prompts as either a JSON string or a Python list.
+        CrewAI's agent sometimes passes a raw list — this converts it
+        to a JSON string before Pydantic validates the type, eliminating
+        the attempt #1 validation error entirely.
+        """
+        if isinstance(v, list):
+            logger.debug(f"prompts received as list ({len(v)} items) — converting to JSON string")
+            return json.dumps(v)
+        if isinstance(v, str):
+            return v
+        # any other type — best-effort serialise
+        return json.dumps(v) if v is not None else "[]"
 
 
 class ImageGenTool(BaseTool):

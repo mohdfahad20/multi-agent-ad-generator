@@ -1,181 +1,188 @@
 {
   "pain_points": [
     {
-      "id": "PP01",
-      "description": "Fear of guessing / analysis paralysis – “Stop guessing which stocks to buy.”",
-      "underlying_fear": "Loss of money & reputation from bad decisions"
+      "id": "pp_01",
+      "description": "Fear of making costly mistakes – “guessing which stocks to buy” and losing money on random advice.",
+      "evidence": [
+        "Stop guessing which stocks to buy.",
+        "I lost $12,000 following random YouTube advice."
+      ]
     },
     {
-      "id": "PP02",
-      "description": "Regret & embarrassment from past losses caused by unreliable advice.",
-      "underlying_fear": "Being taken advantage of / looking foolish"
+      "id": "pp_02",
+      "description": "Feeling isolated / lacking a reliable community – “trading alone” and missing collective intelligence.",
+      "evidence": [
+        "Most retail investors lose money because they trade alone.",
+        "community of 50k real traders sharing their actual trades."
+      ]
     },
     {
-      "id": "PP03",
-      "description": "Perception that the market is “rigged” or stacked against the retail trader.",
-      "underlying_fear": "Powerlessness & inevitability of losing"
+      "id": "pp_03",
+      "description": "Perceived market rig‑giness / belief that the market is stacked against them.",
+      "evidence": [
+        "The market isn't rigged — you just don't have the right signals."
+      ]
     },
     {
-      "id": "PP04",
-      "description": "Time scarcity – “5 minutes a day” claim that trading must be a full‑time grind.",
-      "underlying_fear": "Missing life, burnout, opportunity cost"
+      "id": "pp_04",
+      "description": "Time scarcity / overwhelm from analysis – “no charts, no analysis, no stress”.",
+      "evidence": [
+        "5 minutes a day. That's all it takes.",
+        "No charts, no analysis, no stress."
+      ]
     },
     {
-      "id": "PP05",
-      "description": "Isolation – “Most retail investors lose because they trade alone.”",
-      "underlying_fear": "Loneliness, lack of support, missing the “crowd advantage”"
+      "id": "pp_05",
+      "description": "Fear of missing out on high‑return opportunities – need for “real‑time alerts” and “never miss a move”.",
+      "evidence": [
+        "Join 50,000 traders who never miss a move.",
+        "Get real‑time alerts before the move happens."
+      ]
     }
   ],
   "hook_patterns": [
     {
-      "id": "HK01",
-      "type": "Bold claim / statistic",
-      "example": "Our AI signals gave members 23% gains last month"
+      "id": "hook_01",
+      "pattern": "Bold, quantified claim + immediacy",
+      "example": "\"Our AI signals gave members 23% gains last month.\""
     },
     {
-      "id": "HK02",
-      "type": "Personal failure story (pain‑then‑gain)",
-      "example": "I lost $12,000 following random YouTube advice… Now I'm up 31% this year"
+      "id": "hook_02",
+      "pattern": "Personal loss story → redemption",
+      "example": "\"I lost $12,000 … Now I'm up 31% this year.\""
     },
     {
-      "id": "HK03",
-      "type": "Contrarian myth‑busting",
-      "example": "The market isn't rigged — you just don't have the right signals"
+      "id": "hook_03",
+      "pattern": "Contrarian myth‑busting statement",
+      "example": "\"The market isn't rigged — you just don't have the right signals.\""
     },
     {
-      "id": "HK04",
-      "type": "Time‑efficiency promise",
-      "example": "5 minutes a day. That's all it takes"
+      "id": "hook_04",
+      "pattern": "Time‑efficiency promise",
+      "example": "\"5 minutes a day. That's all it takes...\""
     },
     {
-      "id": "HK05",
-      "type": "Warning + scarcity",
-      "example": "WARNING: Most retail investors lose money because they trade alone"
+      "id": "hook_05",
+      "pattern": "Urgent warning label",
+      "example": "\"WARNING: Most retail investors lose money because they trade alone.\""
     }
   ],
   "emotional_triggers": [
     {
-      "id": "ET01",
-      "emotion": "Greed / desire for profit",
-      "manifestation": "23% gains, 31% up this year, 78% win rate"
+      "id": "et_01",
+      "emotion": "Fear of loss / financial disaster",
+      "ads": ["mock_001", "mock_002", "mock_005"]
     },
     {
-      "id": "ET02",
-      "emotion": "Fear of loss",
-      "manifestation": "Lost $12,000, most investors lose, market rigged"
+      "id": "et_02",
+      "emotion": "Greed / desire for quick gains",
+      "ads": ["mock_001", "mock_002", "mock_003"]
     },
     {
-      "id": "ET03",
-      "emotion": "FOMO / social proof",
-      "manifestation": "Join 50,000 traders, community of 50k real traders"
+      "id": "et_03",
+      "emotion": "FOMO (fear of missing out)",
+      "ads": ["mock_001", "mock_003", "mock_005"]
     },
     {
-      "id": "ET04",
-      "emotion": "Hope / ease",
-      "manifestation": "5 min/day, no charts, no stress"
+      "id": "et_04",
+      "emotion": "Hope / empowerment",
+      "ads": ["mock_004", "mock_005"]
     },
     {
-      "id": "ET05",
-      "emotion": "Trust / authority",
-      "manifestation": "AI‑driven signals, real‑time alerts, “used by 50,000+ members”"
+      "id": "et_05",
+      "emotion": "Trust via social proof",
+      "ads": ["mock_001", "mock_002", "mock_003", "mock_005"]
     }
   ],
   "persuasion_frameworks": [
     {
-      "id": "PF01",
+      "id": "pf_01",
       "framework": "AIDA",
-      "application": "Attention (bold claim), Interest (stats & community size), Desire (profit numbers, time‑saving), Action (Start Free Trial / Join Now)"
+      "usage": "All ads open with attention‑grabbing pain (A), list benefits (I), add social proof (D), then close with CTA (A)."
     },
     {
-      "id": "PF02",
+      "id": "pf_02",
       "framework": "PAS (Problem‑Agitate‑Solution)",
-      "application": "Problem (guessing, losing alone), Agitate (lost $12k, market rigged), Solution (AI signals, community alerts, 5‑min system)"
+      "usage": "Mock_002 & Mock_005 start with a painful personal loss, intensify (agitate) and then present the service as the solution."
     },
     {
-      "id": "PF03",
-      "framework": "Storytelling arc – personal transformation",
-      "application": "Hero (trader) suffers loss → discovers community → enjoys gains"
+      "id": "pf_03",
+      "framework": "Storytelling arc (hero’s journey)",
+      "usage": "Mock_002 follows a before‑after narrative (lost money → found community → profit)."
     },
     {
-      "id": "PF04",
-      "framework": "Scarcity/ urgency hybrid",
-      "application": "Free 7‑day trial, cancel anytime, warning language"
+      "id": "pf_04",
+      "framework": "Social proof + scarcity combo",
+      "usage": "Numbers of members (50,000) and limited free trial create urgency."
     }
   ],
   "cta_patterns": [
     {
-      "id": "CTA01",
-      "text": "Start Free Trial",
-      "type": "Free‑trial incentive"
+      "id": "cta_01",
+      "text": "Start Free Trial / Try Free",
+      "frequency": 3,
+      "ads": ["mock_001", "mock_005"]
     },
     {
-      "id": "CTA02",
-      "text": "Join Now",
-      "type": "Community‑join invitation"
+      "id": "cta_02",
+      "text": "Join Now / Join",
+      "frequency": 2,
+      "ads": ["mock_002", "mock_005"]
     },
     {
-      "id": "CTA03",
-      "text": "Get Signals",
-      "type": "Product‑specific action"
-    },
-    {
-      "id": "CTA04",
-      "text": "See How It Works",
-      "type": "Education‑lead generation"
-    },
-    {
-      "id": "CTA05",
-      "text": "Try Free",
-      "type": "Zero‑risk entry"
+      "id": "cta_03",
+      "text": "Get Signals / See How It Works",
+      "frequency": 2,
+      "ads": ["mock_003", "mock_004"]
     }
   ],
   "visual_concepts": [
     {
-      "id": "VC01",
-      "media_type": "video",
-      "description": "Fast‑cut montage of stock tickers, AI dashboards & happy traders – reinforces speed & tech credibility"
+      "id": "vis_01",
+      "type": "Video with fast‑moving market charts & tickers",
+      "rationale": "Conveys real‑time alerts and AI speed (used in mock_001, mock_003, mock_005)."
     },
     {
-      "id": "VC02",
-      "media_type": "image",
-      "description": "Portrait of a relieved individual (often a “regular” person) with a headline overlay – builds relatability"
+      "id": "vis_02",
+      "type": "Hero portrait + testimonial quote overlay",
+      "rationale": "Builds trust via a relatable trader story (mock_002 image)."
     },
     {
-      "id": "VC03",
-      "media_type": "video",
-      "description": "Screen‑recorded real‑time alert notification popping up on a phone – proves immediacy"
+      "id": "vis_03",
+      "type": "Simple UI mock‑up of a mobile alert screen",
+      "rationale": "Supports the 5‑minute claim and “no analysis” promise (mock_004 image)."
     },
     {
-      "id": "VC04",
-      "media_type": "image",
-      "description": "Bold statistic graphic (e.g., “78% Win Rate”) with contrasting colors – acts as a pattern interrupt"
-    },
-    {
-      "id": "VC05",
-      "media_type": "video",
-      "description": "Animated timeline showing “5 min/day → portfolio grows” – visualizes the time‑efficiency promise"
+      "id": "vis_04",
+      "type": "Large member count badge (e.g., “50,000+ members”)",
+      "rationale": "Instant social proof repeated across all creatives."
     }
   ],
   "key_messages": [
     {
-      "id": "KM01",
-      "message": "AI‑driven signals deliver measurable, repeatable gains"
+      "id": "km_01",
+      "message": "AI‑driven signals deliver measurable, high‑percentage gains.",
+      "ads": ["mock_001"]
     },
     {
-      "id": "KM02",
-      "message": "You’re not alone – join a massive, proven community"
+      "id": "km_02",
+      "message": "Join a massive, proven community – you’re not alone.",
+      "ads": ["mock_002", "mock_005"]
     },
     {
-      "id": "KM03",
-      "message": "The market can be beaten with the right real‑time alerts"
+      "id": "km_03",
+      "message": "Real‑time alerts let you act before the move happens.",
+      "ads": ["mock_003", "mock_005"]
     },
     {
-      "id": "KM04",
-      "message": "Trading can be done in minutes, no charts required"
+      "id": "km_04",
+      "message": "Trading can be done in minutes a day with zero analysis.",
+      "ads": ["mock_004"]
     },
     {
-      "id": "KM05",
-      "message": "Zero‑risk entry (free trial, cancel anytime) removes the barrier to try"
+      "id": "km_05",
+      "message": "Free trial, no commitment – risk‑free entry.",
+      "ads": ["mock_001", "mock_005"]
     }
   ]
 }

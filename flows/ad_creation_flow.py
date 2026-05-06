@@ -39,7 +39,7 @@ class AdCreationState(BaseModel):
 
     # Agent 3 outputs
     script: str = ""
-    scene_prompts: str = ""   # JSON array of image prompts
+    scene_prompts: str = ""   # JSON array of image prompts (always a string)
 
     # Agent 4 outputs
     audio_path: str = ""
@@ -215,11 +215,33 @@ class AdCreationFlow(Flow[AdCreationState]):
 
         creator = create_video_creator()
 
+        # FIX: Enforce scene_prompts is always a JSON string at the boundary.
+        # LLM output can sometimes return a list or malformed value — this
+        # ensures the tool always receives the correct string type.
+        scene_prompts = self.state.scene_prompts
+        if not isinstance(scene_prompts, str):
+            scene_prompts = json.dumps(scene_prompts)
+            logger.warning(
+                f"scene_prompts was not a string (was {type(scene_prompts).__name__}) "
+                f"— converted to JSON string"
+            )
+
+        # Validate it's parseable JSON before passing to agent
+        try:
+            parsed = json.loads(scene_prompts)
+            if not isinstance(parsed, list) or len(parsed) == 0:
+                raise ValueError("Empty or non-list JSON")
+        except (json.JSONDecodeError, ValueError):
+            logger.warning(
+                "scene_prompts failed JSON validation — falling back to DEFAULT_SCENE_PROMPTS"
+            )
+            scene_prompts = json.dumps(self.DEFAULT_SCENE_PROMPTS)
+
         task = Task(
             description=(
                 f"Generate all assets for the 60-second ad video.\n\n"
                 f"AD SCRIPT (for voiceover):\n{self.state.script}\n\n"
-                f"IMAGE PROMPTS (for scene generation):\n{self.state.scene_prompts}\n\n"
+                f"IMAGE PROMPTS (for scene generation):\n{scene_prompts}\n\n"
                 f"INSTRUCTIONS:\n"
                 f"1. Call AdImageGenerator with the scene prompts JSON array\n"
                 f"2. Call ElevenLabsVoiceover with the full ad script text\n"
@@ -290,7 +312,9 @@ class AdCreationFlow(Flow[AdCreationState]):
     def _parse_script_output(self, raw: str) -> tuple[str, str]:
         """
         Split raw agent output into clean voiceover script and scene prompts JSON.
-        If LLM doesn't output SCENE_PROMPTS tag (common with free models),
+
+        Returns scene_prompts as a guaranteed JSON string (never a list).
+        If LLM doesn't output SCENE_PROMPTS tag, or output is invalid JSON,
         falls back to DEFAULT_SCENE_PROMPTS so image generation always has input.
         """
         import re
@@ -313,7 +337,7 @@ class AdCreationFlow(Flow[AdCreationState]):
                         scene_prompts = candidate
                         logger.info(f"Extracted {len(parsed)} scene prompts from LLM output")
                 except json.JSONDecodeError:
-                    pass
+                    logger.warning("SCENE_PROMPTS found but failed JSON parse — using defaults")
 
         # FALLBACK: LLM didn't produce valid SCENE_PROMPTS — use defaults
         if scene_prompts == "[]":
@@ -321,6 +345,13 @@ class AdCreationFlow(Flow[AdCreationState]):
             logger.warning(
                 "LLM did not output SCENE_PROMPTS tag — using default trading scene prompts"
             )
+
+        # FIX: Final type safety guard — scene_prompts must always leave this
+        # method as a string, never a list, to prevent Pydantic validation errors
+        # downstream when passed to the AdImageGenerator tool.
+        if not isinstance(scene_prompts, str):
+            scene_prompts = json.dumps(scene_prompts)
+            logger.warning("scene_prompts coerced to string in _parse_script_output")
 
         # Clean voiceover script: strip timestamps and section labels
         clean_script = re.sub(r"\[\d+-\d+s\]", "", script)
@@ -351,7 +382,7 @@ class AdCreationFlow(Flow[AdCreationState]):
         self.state.image_paths = [str(p) for p in real_images]
         logger.info(f"Found {len(self.state.image_paths)} real PNG images")
 
-        # FIX 3 — Pad to 5 images by repeating last available (avoids missing scene crash)
+        # Pad to 5 images by repeating last available (avoids missing scene crash)
         if self.state.image_paths:
             while len(self.state.image_paths) < 5:
                 self.state.image_paths.append(self.state.image_paths[-1])
@@ -361,8 +392,8 @@ class AdCreationFlow(Flow[AdCreationState]):
 
     def _copy_assets_to_public(self, remotion_dir: Path) -> tuple[list[str], str]:
         """
-        FIX 1 + FIX 2 — Copy assets into remotion_project/public/ and
-        return Remotion-compatible relative paths (/images/..., /audio/...).
+        Copy assets into remotion_project/public/ and return Remotion-compatible
+        relative paths (/images/..., /audio/...).
         Remotion's staticFile() ONLY accepts paths relative to /public — never absolute.
         """
         import shutil
@@ -415,7 +446,7 @@ class AdCreationFlow(Flow[AdCreationState]):
 
         remotion_dir = settings.BASE_DIR / "remotion_project"
 
-        # FIX 1 + FIX 2 — copy assets and get relative paths
+        # Copy assets and get relative paths
         relative_image_paths, relative_audio_path = self._copy_assets_to_public(remotion_dir)
 
         if not relative_image_paths:
@@ -438,7 +469,7 @@ class AdCreationFlow(Flow[AdCreationState]):
         output_mp4 = settings.VIDEOS_DIR / "cwt_ad.mp4"
         output_mp4.parent.mkdir(parents=True, exist_ok=True)
 
-        # FIX — Windows needs npx.cmd; Unix uses npx
+        # Windows needs npx.cmd; Unix uses npx
         # shutil.which() finds the correct executable on any OS
         npx_cmd = shutil.which("npx") or shutil.which("npx.cmd") or "npx"
         logger.info(f"Using npx at: {npx_cmd}")
