@@ -1,0 +1,28 @@
+# Environment
+.env
+config/gdrive_credentials.json
+config/gdrive_token.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.egg
+
+# Node / Remotion
+remotion_project/node_modules/
+remotion_project/dist/
+
+# Outputs (comment out if you want to commit sample outputs)
+output/audio/*.mp3
+output/videos/*.mp4
+output/images/*.png
+logs/*.log
+
+# OS
+.DS_Store
+Thumbs.db

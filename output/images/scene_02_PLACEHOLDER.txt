@@ -1,0 +1,4 @@
+[PLACEHOLDER IMAGE 2]
+Prompt: Close‑up of a stressed office worker at a cluttered desk, scrolling on a laptop, red loss numbers overlay, muted colors to convey frustration
+
+Add HF_API_TOKEN to .env to generate real images.

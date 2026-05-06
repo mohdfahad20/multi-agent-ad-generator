@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "raw_ads_path": "C:\\Users\\zzeba\\OneDrive\\Desktop\\Practicals\\cwt_ads_agent\\output\\json\\raw_ads.json",
+  "insights_path": "C:\\Users\\zzeba\\OneDrive\\Desktop\\Practicals\\cwt_ads_agent\\output\\json\\insights.json",
+  "script_path": "C:\\Users\\zzeba\\OneDrive\\Desktop\\Practicals\\cwt_ads_agent\\output\\scripts\\ad_script.txt",
+  "audio_path": "C:\\Users\\zzeba\\OneDrive\\Desktop\\Practicals\\cwt_ads_agent\\output\\audio\\voiceover.mp3",
+  "image_paths": [
+    "C:\\Users\\zzeba\\OneDrive\\Desktop\\Practicals\\cwt_ads_agent\\output\\images\\scene_01.png",
+    "C:\\Users\\zzeba\\OneDrive\\Desktop\\Practicals\\cwt_ads_agent\\output\\images\\scene_02.png",
+    "C:\\Users\\zzeba\\OneDrive\\Desktop\\Practicals\\cwt_ads_agent\\output\\images\\scene_03.png",
+    "C:\\Users\\zzeba\\OneDrive\\Desktop\\Practicals\\cwt_ads_agent\\output\\images\\scene_04.png",
+    "C:\\Users\\zzeba\\OneDrive\\Desktop\\Practicals\\cwt_ads_agent\\output\\images\\scene_05.png"
+  ],
+  "video_path": "C:\\Users\\zzeba\\OneDrive\\Desktop\\Practicals\\cwt_ads_agent\\output\\videos\\cwt_ad.mp4"
+}

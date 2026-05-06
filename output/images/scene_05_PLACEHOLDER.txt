@@ -1,0 +1,4 @@
+[PLACEHOLDER IMAGE 5]
+Prompt: Rolling ticker of member testimonials, Forbes and Benzinga logos, animated $2.4M profit figure, upbeat motion graphics, vibrant colors
+
+Add HF_API_TOKEN to .env to generate real images.

@@ -1,0 +1,4 @@
+[PLACEHOLDER IMAGE 4]
+Prompt: Split-screen: left side chaotic market data, right side clean CrowdWisdomTrading dashboard with real-time signal tickers, community avatars, bright teal and white palette
+
+Add HF_API_TOKEN to .env to generate real images.

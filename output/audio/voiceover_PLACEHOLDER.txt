@@ -1,0 +1,6 @@
+[PLACEHOLDER AUDIO]
+Script text:
+
+Did you know 78% of retail investors watch the market rally and miss the gains? You’re juggling a 9‑to‑5, scrolling endless charts, and still end up with a portfolio that feels… stuck. You’ve tried YouTube tips, paid for courses, and still see your retirement savings wobble. Every time the S&P spikes, you’re left wondering ‘what if?’—the fear that the market is rigged, that you’ll lose the nest egg you’ve worked a lifetime to build. The stress of high fees, confusing jargon, and a lone‑wolf approach keeps you awake at night. Enter CrowdWisdomTrading. Real‑time signals from a vetted community of 50,000+ traders, delivering a 78% win rate over the last two years. No technical analysis needed—just copy the crowd’s moves in under five minutes a day. Stocks, crypto, forex—all in one simple dashboard. Members have generated $2.4 million in profits this year alone. The average user sees a +23% portfolio boost in the first six months. Featured in Forbes, Benzinga, and TradingView—real traders, real results. Ready to stop watching and start earning? Click the link, claim your 7‑day free trial, and trade smarter with the crowd. Start Your Free Trial now at crowdwisdomtrading.com.
+
+Add ELEVENLABS_API_KEY to .env to generate real audio.

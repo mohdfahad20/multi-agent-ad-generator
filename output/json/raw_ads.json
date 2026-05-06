@@ -1,0 +1,57 @@
+[
+  {
+    "id": "mock_001",
+    "page_name": "TradeSignalPro",
+    "ad_text": "Stop guessing which stocks to buy. Our AI signals gave members 23% gains last month. Join 50,000 traders who never miss a move. Try free for 7 days.",
+    "headline": "AI Trading Signals \u2014 78% Win Rate",
+    "cta": "Start Free Trial",
+    "impressions_lower": 500000,
+    "impressions_upper": 1000000,
+    "start_date": "2026-04-10",
+    "media_type": "video"
+  },
+  {
+    "id": "mock_002",
+    "page_name": "WealthSignals",
+    "ad_text": "I lost $12,000 following random YouTube advice. Then I found a community of 50k real traders sharing their actual trades. Now I'm up 31% this year.",
+    "headline": "Trade With a Winning Community",
+    "cta": "Join Now",
+    "impressions_lower": 300000,
+    "impressions_upper": 700000,
+    "start_date": "2026-04-15",
+    "media_type": "image"
+  },
+  {
+    "id": "mock_003",
+    "page_name": "MarketBeaters",
+    "ad_text": "The market isn't rigged \u2014 you just don't have the right signals. Get real-time alerts before the move happens. Used by 50,000+ members.",
+    "headline": "Beat the Market Every Week",
+    "cta": "Get Signals",
+    "impressions_lower": 200000,
+    "impressions_upper": 500000,
+    "start_date": "2026-04-20",
+    "media_type": "video"
+  },
+  {
+    "id": "mock_004",
+    "page_name": "FinancialFreedomFast",
+    "ad_text": "5 minutes a day. That's all it takes with our trading signals. No charts, no analysis, no stress. Just follow the alerts and watch your portfolio grow.",
+    "headline": "5 Min/Day Trading System",
+    "cta": "See How It Works",
+    "impressions_lower": 150000,
+    "impressions_upper": 400000,
+    "start_date": "2026-04-22",
+    "media_type": "image"
+  },
+  {
+    "id": "mock_005",
+    "page_name": "StockAlertDaily",
+    "ad_text": "WARNING: Most retail investors lose money because they trade alone. The top 1% uses community intelligence. Now you can too \u2014 free trial, cancel anytime.",
+    "headline": "Don't Trade Alone \u2014 Join the Crowd",
+    "cta": "Try Free",
+    "impressions_lower": 100000,
+    "impressions_upper": 300000,
+    "start_date": "2026-04-25",
+    "media_type": "video"
+  }
+]

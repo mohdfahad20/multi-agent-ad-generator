@@ -1,0 +1,4 @@
+[PLACEHOLDER IMAGE 1]
+Prompt: Bold kinetic typography on a dark background showing 'Turn $1,000 into $5,000 in 30 days', with flashing market ticker graphics and a quick zoom effect, cinematic lighting
+
+Add HF_API_TOKEN to .env to generate real images.

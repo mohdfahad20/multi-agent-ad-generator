@@ -1,0 +1,181 @@
+{
+  "pain_points": [
+    {
+      "id": "PP01",
+      "description": "Fear of guessing / analysis paralysis – “Stop guessing which stocks to buy.”",
+      "underlying_fear": "Loss of money & reputation from bad decisions"
+    },
+    {
+      "id": "PP02",
+      "description": "Regret & embarrassment from past losses caused by unreliable advice.",
+      "underlying_fear": "Being taken advantage of / looking foolish"
+    },
+    {
+      "id": "PP03",
+      "description": "Perception that the market is “rigged” or stacked against the retail trader.",
+      "underlying_fear": "Powerlessness & inevitability of losing"
+    },
+    {
+      "id": "PP04",
+      "description": "Time scarcity – “5 minutes a day” claim that trading must be a full‑time grind.",
+      "underlying_fear": "Missing life, burnout, opportunity cost"
+    },
+    {
+      "id": "PP05",
+      "description": "Isolation – “Most retail investors lose because they trade alone.”",
+      "underlying_fear": "Loneliness, lack of support, missing the “crowd advantage”"
+    }
+  ],
+  "hook_patterns": [
+    {
+      "id": "HK01",
+      "type": "Bold claim / statistic",
+      "example": "Our AI signals gave members 23% gains last month"
+    },
+    {
+      "id": "HK02",
+      "type": "Personal failure story (pain‑then‑gain)",
+      "example": "I lost $12,000 following random YouTube advice… Now I'm up 31% this year"
+    },
+    {
+      "id": "HK03",
+      "type": "Contrarian myth‑busting",
+      "example": "The market isn't rigged — you just don't have the right signals"
+    },
+    {
+      "id": "HK04",
+      "type": "Time‑efficiency promise",
+      "example": "5 minutes a day. That's all it takes"
+    },
+    {
+      "id": "HK05",
+      "type": "Warning + scarcity",
+      "example": "WARNING: Most retail investors lose money because they trade alone"
+    }
+  ],
+  "emotional_triggers": [
+    {
+      "id": "ET01",
+      "emotion": "Greed / desire for profit",
+      "manifestation": "23% gains, 31% up this year, 78% win rate"
+    },
+    {
+      "id": "ET02",
+      "emotion": "Fear of loss",
+      "manifestation": "Lost $12,000, most investors lose, market rigged"
+    },
+    {
+      "id": "ET03",
+      "emotion": "FOMO / social proof",
+      "manifestation": "Join 50,000 traders, community of 50k real traders"
+    },
+    {
+      "id": "ET04",
+      "emotion": "Hope / ease",
+      "manifestation": "5 min/day, no charts, no stress"
+    },
+    {
+      "id": "ET05",
+      "emotion": "Trust / authority",
+      "manifestation": "AI‑driven signals, real‑time alerts, “used by 50,000+ members”"
+    }
+  ],
+  "persuasion_frameworks": [
+    {
+      "id": "PF01",
+      "framework": "AIDA",
+      "application": "Attention (bold claim), Interest (stats & community size), Desire (profit numbers, time‑saving), Action (Start Free Trial / Join Now)"
+    },
+    {
+      "id": "PF02",
+      "framework": "PAS (Problem‑Agitate‑Solution)",
+      "application": "Problem (guessing, losing alone), Agitate (lost $12k, market rigged), Solution (AI signals, community alerts, 5‑min system)"
+    },
+    {
+      "id": "PF03",
+      "framework": "Storytelling arc – personal transformation",
+      "application": "Hero (trader) suffers loss → discovers community → enjoys gains"
+    },
+    {
+      "id": "PF04",
+      "framework": "Scarcity/ urgency hybrid",
+      "application": "Free 7‑day trial, cancel anytime, warning language"
+    }
+  ],
+  "cta_patterns": [
+    {
+      "id": "CTA01",
+      "text": "Start Free Trial",
+      "type": "Free‑trial incentive"
+    },
+    {
+      "id": "CTA02",
+      "text": "Join Now",
+      "type": "Community‑join invitation"
+    },
+    {
+      "id": "CTA03",
+      "text": "Get Signals",
+      "type": "Product‑specific action"
+    },
+    {
+      "id": "CTA04",
+      "text": "See How It Works",
+      "type": "Education‑lead generation"
+    },
+    {
+      "id": "CTA05",
+      "text": "Try Free",
+      "type": "Zero‑risk entry"
+    }
+  ],
+  "visual_concepts": [
+    {
+      "id": "VC01",
+      "media_type": "video",
+      "description": "Fast‑cut montage of stock tickers, AI dashboards & happy traders – reinforces speed & tech credibility"
+    },
+    {
+      "id": "VC02",
+      "media_type": "image",
+      "description": "Portrait of a relieved individual (often a “regular” person) with a headline overlay – builds relatability"
+    },
+    {
+      "id": "VC03",
+      "media_type": "video",
+      "description": "Screen‑recorded real‑time alert notification popping up on a phone – proves immediacy"
+    },
+    {
+      "id": "VC04",
+      "media_type": "image",
+      "description": "Bold statistic graphic (e.g., “78% Win Rate”) with contrasting colors – acts as a pattern interrupt"
+    },
+    {
+      "id": "VC05",
+      "media_type": "video",
+      "description": "Animated timeline showing “5 min/day → portfolio grows” – visualizes the time‑efficiency promise"
+    }
+  ],
+  "key_messages": [
+    {
+      "id": "KM01",
+      "message": "AI‑driven signals deliver measurable, repeatable gains"
+    },
+    {
+      "id": "KM02",
+      "message": "You’re not alone – join a massive, proven community"
+    },
+    {
+      "id": "KM03",
+      "message": "The market can be beaten with the right real‑time alerts"
+    },
+    {
+      "id": "KM04",
+      "message": "Trading can be done in minutes, no charts required"
+    },
+    {
+      "id": "KM05",
+      "message": "Zero‑risk entry (free trial, cancel anytime) removes the barrier to try"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+[PLACEHOLDER IMAGE 3]
+Prompt: Fast-forward calendar pages flipping, then a red LOSS stamp slamming onto a portfolio line graph, dramatic shadow, dark background
+
+Add HF_API_TOKEN to .env to generate real images.
