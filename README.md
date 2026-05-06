@@ -16,8 +16,12 @@ Built using **CrewAI**, this system takes you from:
 ## ⚙️ What It Does
 
 ### 🔹 Step 1 — Ad Research (Apify + Fallback)
-- Scrapes top-performing Meta ads using Apify
-- If scraping fails → uses realistic mock ad dataset
+- Scrapes top-performing Meta ads using Apify, targeted at the **CrowdWisdomTrading niche** (trading, financial education, stock market)
+- Filters ads from the **last 30 days** and selects the best-performing ones
+- Results saved to `output/data/ads_research.json`
+- If Apify scraping fails (e.g. deprecated actor, rate limit) → automatically falls back to a realistic mock ad dataset so the pipeline continues uninterrupted
+
+> ⚠️ Note: During development, some Apify actors returned "invalid or deprecated" errors. The fallback mock dataset was used in those cases and the pipeline completed successfully end-to-end.
 
 ### 🔹 Step 2 — Insight Extraction
 Extracts the following using an LLM (OpenRouter):
@@ -36,6 +40,7 @@ Extracts the following using an LLM (OpenRouter):
 ### 🔹 Step 5 — Video Rendering
 - 🎬 Built with **Remotion (React + TypeScript)**
 - Produces a vertical short-form video (Reels / TikTok format)
+- 🔤 **Subtitles included** — auto-generated and overlaid on the video (basic sync implemented; word-level timestamp precision is a known improvement area)
 
 ---
 
@@ -152,12 +157,13 @@ python main.py
 
 ## 📦 Output
 
-| Output  | Path                          |
-|---------|-------------------------------|
-| Script  | `output/scripts/ad_script.txt` |
-| Images  | `output/images/`              |
-| Audio   | `output/audio/voiceover.mp3`  |
-| Video   | `output/videos/cwt_ad.mp4`    |
+| Output       | Path                              |
+|--------------|-----------------------------------|
+| Ads research | `output/data/ads_research.json`   |
+| Script       | `output/scripts/ad_script.txt`    |
+| Images       | `output/images/`                  |
+| Audio        | `output/audio/voiceover.mp3`      |
+| Video        | `output/videos/cwt_ad.mp4`        |
 
 ---
 
@@ -166,7 +172,9 @@ python main.py
 - ✅ AI-generated script
 - ✅ 5 scene images
 - ✅ Voiceover narration
-- ✅ Final video ad
+- ✅ Subtitles overlaid on video
+- ✅ Final video ad (vertical, 60s)
+- ✅ Ads research saved to JSON
 
 ---
 
@@ -181,6 +189,15 @@ python main.py
 | Video            | Remotion              |
 | Backend          | Python                |
 | Frontend         | React + TypeScript    |
+| IDE / AI Coding  | Antigravity           |
+
+---
+
+## 🔑 Apify Notes
+
+The pipeline uses Apify to scrape Meta ads targeting the CrowdWisdomTrading niche. During development, some Apify actors were found to be **deprecated or invalid**, which triggered the built-in fallback. The Apify API token used for this project will be submitted directly via email as required.
+
+To find your Apify token: go to [apify.com](https://apify.com) → **Settings** → **Integrations** → copy your **Personal API token**.
 
 ---
 
@@ -195,7 +212,7 @@ Even when external services fail, the pipeline continues using fallback logic an
 ## 🚀 Future Improvements
 
 - Real-time ad performance tracking
-- Better subtitle sync (word-level timestamps)
+- Word-level subtitle timestamp precision
 - Multi-language voice generation
 - Automated ad A/B testing
 
